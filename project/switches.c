@@ -31,18 +31,18 @@ void switch_intterupt_handler()
 
   if(p2val & SW1 ? 0 , 1)
     {
-      state(1)
+      state_pos(1)
   }
   else if(p2val & SW2 ? 0 : 1)
     {
-    state(2);
+    state_pos(2);
   }
   else if(p2val & SW3 ? 0 : 1)
     {
-    state(3);
+    state_pos(3);
   }
   else if(p2val & SW4 ? 0 : 1)
     {
-    state(4);
+    state_pos(4);
   }
 }

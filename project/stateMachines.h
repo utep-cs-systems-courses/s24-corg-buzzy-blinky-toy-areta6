@@ -2,6 +2,6 @@
 #define stateMachine_included
 
 
-void state();
+void state_pos();
 
 #endif
