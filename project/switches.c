@@ -3,7 +3,7 @@
 #include "led.h"
 #include "stateMachines.h"
 
-char switch_state_down, switch_state_changed;
+char switch_state_down, switch_state_changed, states;
 
 static char
 switch_update_interrupt_sense()
@@ -25,7 +25,7 @@ void switch_init()//copied over the code from demo again just using port 2
 }
 
 
-void switch_intterupt_handler()
+void switch_interrupt_handler()
 {
   char p2val = switch_update_interrupt_sense();
 
