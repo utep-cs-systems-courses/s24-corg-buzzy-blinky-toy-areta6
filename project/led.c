@@ -8,24 +8,24 @@ void led_init()
   P1DIR |= LEDS;
   P1OUT &= ~LED_GREEN;
   P1OUT &= ~LED_RED;
-  //switch_state_changed =1;
-  //led_update();
+  switch_state_changed =1;
+  led_update();
 }
 
-//void led_update() //code from demo 10 still
-//{
-//  if (switch_state_changed)
-//    {
-//      char ledflags = 0;
-//
-//      ledflags |= switch_state_down ? LED_GREEN : 0;
-//      ledflags |= switch_state_down ? 0 : LED_RED;
+void led_update() //code from demo 10 still
+{
+  if (switch_state_changed)
+    {
+      char ledflags = 0;
 
-//      P1OUT &=(0xff - LEDS) | ledflags;
-//      PIOUT |= ledflags;
-//    }
-//  switch_state_changed = 0;
-//} //from demo 10
+      ledflags |= switch_state_down ? LED_GREEN : 0;
+      ledflags |= switch_state_down ? 0 : LED_RED;
+
+      P1OUT &=(0xff - LEDS) | ledflags;
+      P1OUT |= ledflags;
+    }
+  switch_state_changed = 0;
+} //from demo 10
 
 void led_green_on()
 {
@@ -71,3 +71,5 @@ void led_alternate() //I'm pretty sure my LEDS on my launch pad are flipped comp
   P1OUT |= LED_RED;
   __delay_cycles(1500000);
 }
+
+
