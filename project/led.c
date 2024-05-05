@@ -31,33 +31,35 @@ void led_green_on()
 {
   P1OUT ^= LED_GREEN;
   P1OUT &= ~LED_RED;
+  __delay_cycles(500000);
 }
 
 void led_red_on()//might not use this one but making it just in case
 {
   P1OUT ^= LED_RED;
   P1OUT &= ~LED_GREEN;
+  __delay_cycles(500000);
 }
 
 void leds_off() //turn off leds
 {
   P1OUT &= ~LED_RED;
-  __delay_cycles(5000);
+  __delay_cycles(500000);
   P1OUT &= ~LED_GREEN;
-  __delay_cycles(5000);
+  __delay_cycles(500000);
 }
 
 //adding these for more functions in statemachine
 void led_green_off() 
 {
   P1OUT &= ~LED_GREEN;
-  __delay_cycles(5000);
+  __delay_cycles(500000);
 }
 
 void led_red_off()
 {
   P1OUT &= ~LED_RED;
-  __delay_cycles(5000);
+  __delay_cycles(500000);
 }
 
 void led_alternate() //I'm pretty sure my LEDS on my launch pad are flipped compared to others so if the lights dont match up its cause of that
