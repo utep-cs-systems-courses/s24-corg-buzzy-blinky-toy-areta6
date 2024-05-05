@@ -15,7 +15,7 @@ toy.elf: ${COMMON_OBJECTS} ${COMMON_OBJECTS} main.o led.o switches.o stateMachin
 	${CC} ${CFLAGS} ${LDFLAGS} -o $@ $^
 
 
-load: button.elf
+load: toy.elf
 	msp430loader.sh toy.elf
 
 
