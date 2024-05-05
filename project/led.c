@@ -6,24 +6,26 @@
 void led_init()
 {
   P1DIR |= LEDS;
-  switch_state_changed =1;
-  led_update();
+  P1OUT &= ~LED_GREEN;
+  P1OUT &= ~LED_RED;
+  //switch_state_changed =1;
+  //led_update();
 }
 
-void led_update() //code from demo 10 still
-{
-  if (switch_state_changed)
-    {
-      char ledflags = 0;
+//void led_update() //code from demo 10 still
+//{
+//  if (switch_state_changed)
+//    {
+//      char ledflags = 0;
+//
+//      ledflags |= switch_state_down ? LED_GREEN : 0;
+//      ledflags |= switch_state_down ? 0 : LED_RED;
 
-      ledFlags |= switch_state_down ? LED_GREEN : 0;
-      ledFlags |= switch_state_down ? 0 : LED_RED;
-
-      P1OUT &=(0xff - LEDS) | ledFlags;
-      PIOUT |= ledFlags;
-    }
-  switch_state_changed = 0;  
-} //from demo 10
+//      P1OUT &=(0xff - LEDS) | ledflags;
+//      PIOUT |= ledflags;
+//    }
+//  switch_state_changed = 0;
+//} //from demo 10
 
 void led_green_on()
 {
@@ -48,13 +50,13 @@ void leds_off() //turn off leds
 //adding these for more functions in statemachine
 void led_green_off() 
 {
-  P1OUT &= ~LED_GREEN();
-  _delay_cycles(5000);
+  P1OUT &= ~LED_GREEN;
+  __delay_cycles(5000);
 }
 
 void led_red_off()
 {
-  P1OUT &= ~LED_RED();
+  P1OUT &= ~LED_RED;
   __delay_cycles(5000);
 }
 

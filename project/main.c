@@ -1,7 +1,8 @@
 #include <msp430.h>
-#include "libtimer.h"
+#include "libTimer.h"
 #include "buzzer.h"
 #include "switches.h"
+#include "led.h"
 
 void main()
 {

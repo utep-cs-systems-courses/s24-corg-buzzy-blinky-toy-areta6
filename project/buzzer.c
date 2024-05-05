@@ -19,18 +19,18 @@ void buzzer_set_period(short cycles)
 
 void buzzer_tune()
 {
-  float a = 880;
-  float b = 494;
-  float c = 523; //these are randomly picked i want to have proper notes for next lab
+  //int a = 880;
+  //int b = 494;
+  // int c = 523; //these are randomly picked i want to have proper notes for next lab
 
-  float playNotes[10] = (a,b,c,c,a,b,b,a,c);
+  //int playn[10] = {a,b,c,c,a,b,b,a,c,a};
 
   for (int i = 0; 0 < 10; i++)
     {
-      buzzer_set_period(playNotes(i));
+      buzzer_set_period(880);
       __delay_cycles(500000);
       buzzer_set_period(0);
-      __delay_cycles(250000)
+      __delay_cycles(250000);
     }
   buzzer_set_period(0);
 }
